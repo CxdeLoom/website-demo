@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery List App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Bootstrap CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-confetti/1.4.0/confetti.browser.min.js"></script> <!-- Confetti Library -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center">Grocery List App</h1>
+        <button id="theme-toggle" class="btn btn-secondary mb-3" style="padding: 10px 20px;">Switch to Light Theme</button>
+        <button id="view-previous-btn" class="btn btn-info mb-3">History</button>
+        <div id="auth-section" class="mb-4">
+            <input type="email" id="email" class="form-control" placeholder="Email" required>
+            <input type="password" id="password" class="form-control" placeholder="Password" required>
+            <button id="login-btn" class="btn btn-primary">Login</button>
+            <button id="register-btn" class="btn btn-secondary">Register</button>
+        </div>
+        <div id="selection-page" class="hidden">
+            <button class="list-btn btn btn-info" data-type="weekly">Weekly List</button>
+            <button class="list-btn btn btn-info" data-type="monthly">Monthly List</button>
+            <h3>Your Lists</h3>
+            <ul id="created-lists" class="list-group"></ul>
+        </div>
+        <div id="list-page" class="hidden">
+            <h2 id="list-title" class="text-center"></h2>
+            <button id="back-btn" class="btn btn-secondary mb-2">Back</button>
+            <input type="text" id="item-input" class="form-control" placeholder="Add an item...">
+            <input type="number" id="item-quantity" class="form-control" placeholder="Quantity" min="1">
+            <select id="item-unit" class="form-control mb-2">
+                <option value="">Select Unit</option>
+                <option value="kg">kg</option>
+                <option value="g">g</option>
+                <option value="l">l</option>
+                <option value="pcs">pcs</option>
+                <option value="bunch">bunch</option>
+            </select>
+            <input type="text" id="item-notes" class="form-control mb-2" placeholder="Notes (optional)">
+            <button id="add-item-btn" class="btn btn-success">Add Item</button>
+            <ul id="item-list" class="list-group mt-3"></ul>
+            <button id="export-list-btn" class="btn btn-warning mt-2">Export List</button>
+            <button id="feedback-btn" class="btn btn-info mt-2">Feedback</button>
+        </div>
+        <div id="feedback-modal" class="hidden">
+            <h3>Feedback</h3>
+            <textarea id="feedback-text" class="form-control" placeholder="Your suggestions..."></textarea>
+            <button id="submit-feedback" class="btn btn-primary mt-2">Submit</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
